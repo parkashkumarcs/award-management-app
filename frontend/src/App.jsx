@@ -1,12 +1,15 @@
 import { Form } from "./Components/Form"
-import Card from "./Components/Card"
+import AwardList from "./Components/AwardList"
+
+
+
 function App() {
 
 
   return (
-    <>
-    <Form/>
-    
+    <>      
+      <Form/>
+      <AwardList/>
     </>
   )
 }
