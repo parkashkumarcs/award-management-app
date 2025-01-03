@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Award Management</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
+      margin: 0;
+      padding: 20px;
+      color: #fff;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .form-container {
+      background: #fff;
+      color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .form-container h3 {
+      margin-bottom: 15px;
+      font-size: 1.3em;
+    }
+    .form-container input, .form-container button {
+      display: block;
+      width: 98%;
+      margin-bottom: 10px;
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    .form-container button {
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: white;
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease-in-out;
+    }
+    .form-container button:hover {
+      background: linear-gradient(to right, #feb47b, #ff7e5f);
+    }
+    .award-card {
+      background: #fff;
+      color: #333;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: relative;
+      transition: transform 0.2s;
+    }
+    .award-card:hover {
+      transform: scale(1.02);
+    }
+    .award-card h3 {
+      margin: 0 0 10px;
+      font-size: 1.5em;
+    }
+    .award-card p {
+      margin: 0;
+      font-size: 0.9em;
+      color: #666;
+    }
+    .progress-bar {
+      margin-top: 15px;
+      height: 10px;
+      border-radius: 5px;
+      background: #ddd;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-bar .progress {
+      height: 100%;
+      width: 50%; /* Static width for demo */
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+    }
+    .update-button {
+      margin-top: 15px;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.3s ease-in-out;
+    }
+    .update-button:hover {
+      background: linear-gradient(to right, #feb47b, #ff7e5f);
+    }
+    .delete-icon {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #ff5e57;
+      cursor: pointer;
+      font-size: 1.2em;
+    }
+    .delete-icon:hover {
+      color: #e84118;
+    }
+    .clear-button {
+      margin-top: 5px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background 0.3s ease-in-out;
+    }
+    .clear-button:hover {
+      background: #ff1a1a;
+    }
+
+    #awardsContainer {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Add/Edit Form (static version) -->
+    <div class="form-container" id="awardForm">
+      <h3>Add/Edit Award</h3>
+      <input type="text" id="awardTitle" placeholder="Award Title" value="Fitness Champion">
+      <input type="text" id="awardDescription" placeholder="Award Description" value="Complete 10 workouts.">
+      <input type="number" id="awardRequirement" placeholder="Requirements (e.g., 10)" value="10">
+      <button>Submit</button>
+      <button class="clear-button">Clear</button>
+    </div>
+
+    <!-- Awards Display (static data) -->
+    <div id="awardsContainer">
+      <div class="award-card" id="award-1">
+        <span class="delete-icon">&times;</span>
+        <h3>Fitness Champion</h3>
+        <p>Complete 10 workouts.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 50%;"></div>
+        </div>
+        <button class="update-button">Update Progress</button>
+        <button class="update-button">Edit</button>
+      </div>
+
+      <div class="award-card" id="award-2">
+        <span class="delete-icon">&times;</span>
+        <h3>Coding Guru</h3>
+        <p>Solve 5 challenges.</p>
+        <div class="progress-bar">
+          <div class="progress" style="width: 40%;"></div>
+        </div>
+        <button class="update-button">Update Progress</button>
+        <button class="update-button">Edit</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
